@@ -6,17 +6,17 @@
     {
         public static string GetCallerMemberName([CallerMemberName]string memberName = null)
         {
-            return string.Format("My caller member name is: {0}", memberName);
+            return $"My caller member name is: {memberName}";
         }
 
         public static string GetCallerFilePath([CallerFilePath]string filePath = null)
         {
-            return string.Format("My caller file path is: {0}", filePath);
+            return $"My caller file path is: {filePath}";
         }
 
         public static string GetCallerLineNumber([CallerLineNumber]int lineNumber = 0)
         {
-            return string.Format("My caller line number is: {0}", lineNumber);
+            return $"My caller line number is: {lineNumber}";
         }
     }
 }

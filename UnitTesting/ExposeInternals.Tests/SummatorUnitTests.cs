@@ -1,11 +1,11 @@
 namespace ExposeInternals.Tests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
-    [TestClass]
+    [TestFixture]
     public class SummatorUnitTests
     {
-        [TestMethod]
+        [Test]
         public void SumTwoPlusTwoShouldEqualFour()
         {
             var summator = new Summator();
@@ -13,7 +13,7 @@ namespace ExposeInternals.Tests
             Assert.AreEqual(4, result);
         }
 
-        [TestMethod]
+        [Test]
         public void SumMinusOneAndMinusOneShouldEqualMinusTwo()
         {
             var summator = new Summator();
@@ -21,7 +21,7 @@ namespace ExposeInternals.Tests
             Assert.AreEqual(-2, result);
         }
 
-        [TestMethod]
+        [Test]
         public void SumInt32MaxValueAndInt32MaxValueShouldProduceCorrectResult()
         {
             var summator = new Summator();
@@ -29,7 +29,7 @@ namespace ExposeInternals.Tests
             Assert.AreEqual((long)int.MaxValue + int.MaxValue, result);
         }
 
-        [TestMethod]
+        [Test]
         public void SumInt32MaxValueAndInt32MinValueShouldEqualMinusOne()
         {
             var summator = new Summator();
@@ -37,16 +37,16 @@ namespace ExposeInternals.Tests
             Assert.AreEqual(-1, result);
         }
 
-        // GetZero
-        [TestMethod]
+        [Test]
         public void GetZeroReturnsZero()
         {
-            //TODO: PrivateObject class is deprecated in .NET Core
+            // PrivateObject class is deprecated in .NET Core
+            // Alternative: reflection
 
-            //var summator = new Summator();
-            //var privateObject = new PrivateObject(summator);
-            //var getZeroValue = privateObject.Invoke("GetZero");
-            //Assert.AreEqual(0, getZeroValue);
+            // var summator = new Summator();
+            // var privateObject = new PrivateObject(summator);
+            // var getZeroValue = privateObject.Invoke("GetZero");
+            // Assert.AreEqual(0, getZeroValue);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("ExposeInternals.Tests")]
+
 namespace ExposeInternals
 {
     internal class Summator
