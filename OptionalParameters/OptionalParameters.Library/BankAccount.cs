@@ -2,9 +2,9 @@
 {
     public class BankAccount
     {
-        //// Try changing the default value of the money parameter whitout pre-comping the client
-        //// Try adding new optional parameter whitout pre-comping the client
-        public BankAccount(string accountHolder = default(string), decimal money = 1000) // string country = "USA"
+        //// Try changing the default value of the money parameter without pre-comping the client
+        //// Try adding new optional parameter without pre-comping the client
+        public BankAccount(string accountHolder = default, decimal money = 1000) // string country = "USA"
         {
             this.AccountHolder = accountHolder;
             this.Money = money;
@@ -19,7 +19,7 @@
 
         public override string ToString()
         {
-            return string.Format("Bank account of {0} with {1} in cash.", this.AccountHolder, this.Money);
+            return $"Bank account of {this.AccountHolder} with {this.Money} in cash.";
         }
     }
 }

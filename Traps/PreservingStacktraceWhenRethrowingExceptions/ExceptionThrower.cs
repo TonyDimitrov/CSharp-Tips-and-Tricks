@@ -30,6 +30,19 @@
             }
         }
 
+        public void WithNewException()
+        {
+            try
+            {
+                this.FirstMethod();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("==================== WithStacktrace() ====== throw new Exception();");
+                throw new Exception();
+            }
+        }
+
         private void FirstMethod()
         {
             this.SecondMethod();

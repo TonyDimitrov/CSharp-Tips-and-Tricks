@@ -17,11 +17,11 @@
 
             // These are allowed (where T : IClassable)
             var templateClassConstrainedByInterface =
-                new TemplateClassConstrainedByInterface<ClassA>();
+                new TemplateClassConstrainedByInterface<ClassA>(new ClassA());
             var templateClassConstrainedByInterface2 =
-                new TemplateClassConstrainedByInterface<ClassB>();
+                new TemplateClassConstrainedByInterface<ClassB>(new ClassB());
             var templateClassConstrainedByInterface3 =
-                new TemplateClassConstrainedByInterface<StructureA>();
+                new TemplateClassConstrainedByInterface<StructureA>(new StructureA());
 
             // This is allowed (where T : class)
             var templateClassConstrainedByReference =

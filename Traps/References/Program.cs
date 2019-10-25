@@ -4,14 +4,7 @@
 
     public static class Program
     {
-        public static void Main(string[] args)
-        {
-            References();
-            Console.WriteLine(new string('=', 50));
-            StringReferences();
-        }
-
-        private static void References()
+        public static void Main()
         {
             var firstPerson = new Person("1234567890", "John", "Doe");
             var secondPerson = new Person("1234567890", "John", "Doe");
@@ -54,18 +47,6 @@
                 firstObject.GetType().Name,
                 secondObject.GetType().Name);
             Console.WriteLine();
-        }
-
-        private static void StringReferences()
-        {
-            var string1 = "some value";
-            var string2 = "some value";
-            Console.Write("Please enter \"some value\": ");
-            var stringFromConsole = Console.ReadLine() ?? string.Empty;
-            var stringInternFromConsole = string.Intern(stringFromConsole);
-            Console.WriteLine("ReferenceEquals(string1, string2) = {0}", ReferenceEquals(string1, string2));
-            Console.WriteLine("ReferenceEquals(string1, stringFromConsole) = {0}", ReferenceEquals(string1, stringFromConsole));
-            Console.WriteLine("ReferenceEquals(string1, stringInternFromConsole) = {0}", ReferenceEquals(string1, stringInternFromConsole));
         }
     }
 }

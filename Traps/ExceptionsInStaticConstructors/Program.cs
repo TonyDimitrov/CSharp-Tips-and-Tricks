@@ -4,9 +4,9 @@
 
     public static class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            for (int i = 0; i < 3; i++)
+            for (var i = 0; i < 3; i++)
             {
                 try
                 {
@@ -27,9 +27,10 @@
             {
                 var bang = new Bang();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Console.WriteLine("Calling instance constructor failed!!!");
+                Console.WriteLine("Calling instance constructor also failed!");
+                Console.WriteLine($"Exception: {e}");
             }
         }
     }

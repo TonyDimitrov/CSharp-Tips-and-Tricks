@@ -2,5 +2,6 @@
 {
     public interface IHaveInterface
     {
+        void DoSomething();
     }
 }

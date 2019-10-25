@@ -9,15 +9,15 @@
         public FileSystemWatcherLogger(string path)
         {
             var fileSystemWatcher = new FileSystemWatcher
-                                        {
-                                            // Filter = "*.cs",
-                                            IncludeSubdirectories = true,
-                                            Path = path,
-                                            NotifyFilter =
+            {
+                // Filter = "*.cs",
+                IncludeSubdirectories = true,
+                Path = path,
+                NotifyFilter =
                                                 NotifyFilters.FileName | NotifyFilters.LastWrite
                                                 | NotifyFilters.DirectoryName,
-                                            EnableRaisingEvents = true
-                                        };
+                EnableRaisingEvents = true
+            };
             /* Notify filters:
                 FileName, DirectoryName, Attributes, Size
                 LastWrite, LastAccess, CreationTime, Security

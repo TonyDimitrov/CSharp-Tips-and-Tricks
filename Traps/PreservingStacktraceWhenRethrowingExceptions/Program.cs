@@ -14,7 +14,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex);
             }
 
             try
@@ -23,7 +23,16 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex);
+            }
+
+            try
+            {
+                exceptionThrower.WithNewException();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }

@@ -8,11 +8,7 @@
         {
             foreach (var evenNumber in YieldNumbersGenerator.EvenNumbers(50, 60))
             {
-                Console.WriteLine("!! Iterated number {0}", evenNumber);
-                if (evenNumber > 55)
-                {
-                    break;
-                }
+                Console.WriteLine("Iterated number {0}", evenNumber);
             }
         }
     }
