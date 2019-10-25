@@ -2,14 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-
-    <IsPackable>false</IsPackable>
-
-    <ApplicationIcon />
-
-    <OutputType>Library</OutputType>
-
-    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
