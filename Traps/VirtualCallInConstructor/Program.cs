@@ -4,7 +4,7 @@
     {
         public static void Main()
         {
-            var baseClassImpl = new BaseClassImpl();
+            var writer = new ConcreteWriter();
         }
     }
 }

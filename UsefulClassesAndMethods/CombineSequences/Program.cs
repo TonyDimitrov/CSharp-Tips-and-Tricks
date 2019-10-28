@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
 
     public static class Program
     {
@@ -15,7 +14,6 @@
 
         public static void Main()
         {
-            Console.WriteLine(new string('=', 50));
             ConcatMethod();
             Console.WriteLine(new string('=', 50));
             UnionMethod();
@@ -27,21 +25,20 @@
             ZipMethod();
             Console.WriteLine(new string('=', 50));
             AggregateMethod();
-            Console.WriteLine(new string('=', 50));
         }
 
         private static void ConcatMethod()
         {
             var newList = FirstList.Concat(SecondList);
             Console.WriteLine("Concat() result:");
-            PrintList(newList);
+            Console.WriteLine(string.Join(", ", newList));
         }
 
         private static void UnionMethod()
         {
             var newList = FirstList.Union(SecondList);
             Console.WriteLine("Union() result:");
-            PrintList(newList);
+            Console.WriteLine(string.Join(", ", newList));
 
             Console.WriteLine();
 
@@ -49,21 +46,27 @@
                 SecondList,
                 new StringLengthEqualityComparer());
             Console.WriteLine("Union(with length comparer) result:");
-            PrintList(concatenatedListWithComparer);
+            Console.WriteLine(string.Join(", ", concatenatedListWithComparer));
         }
 
         private static void IntersectMethod()
         {
             var newList = FirstList.Intersect(SecondList);
             Console.WriteLine("Intersect() result:");
-            PrintList(newList);
+            Console.WriteLine(string.Join(", ", newList));
         }
 
         private static void ExceptMethod()
         {
             var newList = FirstList.Except(SecondList);
-            Console.WriteLine("Except() result:");
-            PrintList(newList);
+            Console.WriteLine("first Except() second result:");
+            Console.WriteLine(string.Join(", ", newList));
+
+            Console.WriteLine();
+
+            newList = SecondList.Except(FirstList);
+            Console.WriteLine("second Except() first result:");
+            Console.WriteLine(string.Join(", ", newList));
         }
 
         private static void ZipMethod()
@@ -71,7 +74,7 @@
             var listOfNumbers = Enumerable.Range(1, FirstList.Count());
             var newList = listOfNumbers.Zip(FirstList, Tuple.Create);
             Console.WriteLine("Zip() result:");
-            PrintList(newList);
+            Console.WriteLine(string.Join(", ", newList));
 
             // Template magic:
             // public static IEnumerable<TResult> Zip<TFirst, TSecond, TResult>(
@@ -88,18 +91,8 @@
             Console.WriteLine(allString);
 
             // If we don't specify seed value => the seed value becomes the first element of the collection
-        }
 
-        private static void PrintList<T>(IEnumerable<T> list)
-        {
-            var stringBuilder = new StringBuilder();
-            foreach (var item in list)
-            {
-                stringBuilder.Append(item);
-                stringBuilder.Append(", ");
-            }
-
-            Console.WriteLine(stringBuilder.ToString().Trim(' ', ','));
+            // Console.WriteLine(FirstList.Aggregate(0, (seed, current) => seed++));
         }
     }
 }
