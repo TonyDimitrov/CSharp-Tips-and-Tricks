@@ -1,4 +1,4 @@
-﻿namespace Debugging.CallerInfoAttributes
+﻿namespace CallerInfoAttributes
 {
     using System.Runtime.CompilerServices;
 

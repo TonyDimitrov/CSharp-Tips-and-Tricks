@@ -1,4 +1,4 @@
-﻿namespace Debugging.DebuggerVariableDisplay
+﻿namespace DebuggerVariableDisplay
 {
     public class StudentWithToStringMethod : Student
     {
