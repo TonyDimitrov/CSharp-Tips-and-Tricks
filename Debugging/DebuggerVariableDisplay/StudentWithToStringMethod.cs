@@ -9,7 +9,7 @@
 
         public override string ToString()
         {
-            return string.Format("StudentWithToStringMethod named {0} {1}.", this.FirstName, this.LastName);
+            return $"StudentWithToStringMethod named {this.FirstName} {this.LastName}.";
         }
     }
 }

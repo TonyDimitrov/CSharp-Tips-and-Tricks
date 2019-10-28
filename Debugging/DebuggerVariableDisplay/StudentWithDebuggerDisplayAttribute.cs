@@ -12,7 +12,7 @@
 
         public override string ToString()
         {
-            return string.Format("ToString method for StudentWithDebuggerDisplayAttribute named {0} {1}.", this.FirstName, this.LastName);
+            return $"ToString method for StudentWithDebuggerDisplayAttribute named {this.FirstName} {this.LastName}.";
         }
     }
 }

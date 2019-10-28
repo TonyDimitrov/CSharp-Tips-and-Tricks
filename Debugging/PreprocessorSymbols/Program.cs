@@ -17,6 +17,8 @@
 #warning Neither DEBUG nor CI_BUILD
 #endif
             CallOnlyInDebug();
+
+            Debug.WriteLine("Hello, its me");
         }
 
         [Conditional("DEBUG")]

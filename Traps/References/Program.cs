@@ -8,6 +8,8 @@
         {
             var firstPerson = new Person("1234567890", "John", "Doe");
             var secondPerson = new Person("1234567890", "John", "Doe");
+            Console.WriteLine("firstPerson == secondPerson is {0}", firstPerson == secondPerson);
+            Console.WriteLine();
 
             var thirdPerson = secondPerson;
             Console.WriteLine("var thirdPerson = secondPerson;");

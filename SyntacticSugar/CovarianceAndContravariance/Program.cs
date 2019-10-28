@@ -15,7 +15,7 @@
         public static void InvariantGeneric()
         {
             IInvariantGeneric<MiddleClass> genericMiddle = new InvariantGeneric<MiddleClass>();
-            genericMiddle.Method(new MiddleClass());
+            MiddleClass result = genericMiddle.Method(new MiddleClass());
 
             // This will produce compile-time error:
             // Cannot implicitly convert type 'IInvariantGeneric<MiddleClass>' to 'IInvariantGeneric<BaseClass>'.
@@ -38,16 +38,19 @@
             // An explicit conversion exists (are you missing a cast?)
             //// IContravariantGeneric<BaseClass> genericBase = genericMiddle;
 
-            // This is OK:
+            // This is OK here:
             IContravariantGeneric<LastClass> genericLast = genericMiddle;
+            genericLast.Method(new LastClass());
         }
 
         public static void CovariantGeneric()
         {
             ICovariantGeneric<MiddleClass> genericMiddle = new CovariantGeneric<MiddleClass>();
+            MiddleClass result = genericMiddle.Method();
 
-            // This is OK:
+            // This is OK here:
             ICovariantGeneric<BaseClass> genericBase = genericMiddle;
+            BaseClass baseResult = genericBase.Method();
 
             // This will produce compile-time error:
             // Cannot implicitly convert type 'ICovariantGeneric<MiddleClass>' to 'ICovariantGeneric<LastClass>'.
